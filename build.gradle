@@ -1,0 +1,42 @@
+plugins {
+    id "net.serenity-bdd.serenity-gradle-plugin" version "3.6.7"
+    id 'java-library'
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: "net.serenity-bdd.serenity-gradle-plugin"
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
+dependencies {
+
+    implementation libs.bundles.serenity
+            implementation libs.bundles.test
+            implementation libs.bundles.junit
+            implementation libs.bundles.google
+            implementation libs.lombok
+            implementation libs.bundles.apache
+            implementation libs.dotenv
+            implementation libs.bundles.slf4j
+            implementation libs.faker
+            implementation libs.appiumClient
+
+}
+
+test {
+    systemProperty "file.encoding", "ISO-8859-1"
+    systemProperty 'tags', System.getProperty('tags', '')
+    systemProperty "cucumber.filter.tags", System.getProperty("cucumber.filter.tags")
+    systemProperty 'webdriver.driver', System.getProperty('webdriver.driver', '')
+    systemProperty 'headless.mode', System.getProperty('headless.mode', '')
+}
+
+wrapper {
+    gradleVersion = '8.1.1' //version required
+}
+
+gradle.startParameter.continueOnFailure = true
+test.finalizedBy(aggregate)

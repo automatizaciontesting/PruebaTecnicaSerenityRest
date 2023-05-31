@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Llamar las peticiones get,post,put y delete" skipped="0" tests="5" time="10.35" timestamp="2023-05-30 08:26:51"><testcase name="Petición GET"/><testcase name="Generar simple post"/><testcase name="Creacion usuario POST"><failure message="1 expectation failed.&#10;JSON path data.id doesn't match.&#10;Expected: &lt;244&gt;&#10;  Actual: null&#10;" type="java.lang.AssertionError">1 expectation failed.
+JSON path data.id doesn't match.
+Expected: &lt;244&gt;
+  Actual: null
+</failure><system-err>1 expectation failed.
+JSON path data.id doesn't match.
+Expected: &lt;244&gt;
+  Actual: null
+
+com.pruebatecnica.co.stepsdefinition.PeticionesStepsDefinition.validoElCodigoGenerado(PeticionesStepsDefinition.java:110)
+✽.valido el codigo generado(file:///Users/hervincamargo/IdeaProjects/PruebaTecnicaSerenityRest/src/test/resources/features/CrudSerenity.feature:19)
+</system-err></testcase><testcase name="Petición PUT"/><testcase name="Petición Delete"/></testsuite>
